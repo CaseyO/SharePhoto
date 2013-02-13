@@ -20,6 +20,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do 
+	gem 'eventmachine', '~> 1.0.0'
+	gem 'thin', '~> 1.5.0'	
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
