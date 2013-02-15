@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -21,11 +22,15 @@ group :assets do
 end
 
 group :development do 
+	gem 'taps'
+	gem 'pg'
 	gem 'eventmachine', '~> 1.0.0'
 	gem 'thin', '~> 1.5.0'	
 end
 
 gem 'jquery-rails'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
