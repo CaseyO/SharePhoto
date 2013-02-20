@@ -2,7 +2,7 @@ class UserPicsController < ApplicationController
   # GET /user_pics
   # GET /user_pics.json
   def index
-    @user_pics = UserPic.all
+    @user_pic = UserPic.all
 
     respond_to do |format|
       format.html # index.html.erb

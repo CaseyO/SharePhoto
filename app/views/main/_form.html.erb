@@ -1,0 +1,21 @@
+<%= form_for @user_pic do |f| %>
+  <% if @user_pic.erros.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user_pic.errors.count, "error") %> prohibited this photo from being saved:</h2>
+ </div>
+
+    <h2>Comments</h2>
+  
+      Comment 1:<br><%= f.text_field :caption %><br>
+<% end %>
+    <BR>
+    <div class="field">
+      <%= f.label :user_pic %><br />
+      <%= f.text_field :user_pic %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+ 
+      <% end %>

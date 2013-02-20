@@ -5,7 +5,6 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 
 
@@ -23,10 +22,16 @@ end
 
 group :development do 
 	gem 'taps'
-	gem 'pg'
+	gem 'sqlite3'
 	gem 'eventmachine', '~> 1.0.0'
 	gem 'thin', '~> 1.5.0'	
 end
+
+
+group :production do
+	gem 'pg'
+end
+
 
 gem 'jquery-rails'
 
