@@ -1,5 +1,41 @@
 <h1>New user</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', users_path %>
+
+<% provide(:title, "Sign Up") %>
+<h2>Create New Account</h2>
+
+<div>
+  <div>
+    <%= form_for(@user) do |f| %>
+      <%= render 'error_messages', object: f.object %>
+
+	  <div class="editor-label">
+      <%=f.label :name %>
+	  </div>
+	  <div class="editor-field">
+      <%=f.text_field :name, :class => "txtInput" %>
+	  </div>
+
+	  <div class="editor-label">
+      <%=f.label :username %>
+	  </div>
+	  <div class="editor-field">
+      <%=f.text_field :username, :class => "txtInput" %>
+	  </div>
+
+	  <div class="editor-label">
+      <%=f.label :password %>
+	  </div>
+	  <div class="editor-field">
+      <%=f.password_field :password, :class => "txtInput" %>
+	  </div>
+
+
+	  <br/><br/>
+
+      <%= f.submit "Create Account" %>
+	  <br/>
+    <% end %>
+  </div>
+</div>
