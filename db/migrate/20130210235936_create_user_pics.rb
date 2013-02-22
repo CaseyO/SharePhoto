@@ -5,8 +5,8 @@ class CreateUserPics < ActiveRecord::Migration
       t.string :title
       t.string :caption
       t.boolean :tags
-      t.string :img-path
-      t.datetime :date-modified
+      t.string :img_path
+      t.datetime :date_modified
 
       t.timestamps
     end
