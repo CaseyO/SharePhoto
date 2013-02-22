@@ -26,11 +26,12 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
+=begin
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
     end
+=end
   end
 
   # GET /users/1/edit
@@ -38,6 +39,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
+=begin
   # POST /users
   # POST /users.json
   def create
@@ -51,6 +54,18 @@ class UsersController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+    end
+  end
+=end
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      sign_in @user
+      #TheMail.welcome(@user).deliver
+      flash[:success] = "Welcome to SharePhoto"
+      redirect_to '/main/index'
+    else
+      render 'new'
     end
   end
 

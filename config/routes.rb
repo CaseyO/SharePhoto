@@ -1,16 +1,23 @@
 SharePhoto::Application.routes.draw do
+ 
+ 
+  get "main/index"
+
   resources :user_relations
-
-
+  resources :sessions, only: [:new, :create, :destroy]
   resources :user_prefs
-
-
   resources :user_pics
-
-
   resources :users
 
-   root :to => "main#index"
+  match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+
+
+   #root :to => "main#index"
+  root :to => 'sessions#new'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

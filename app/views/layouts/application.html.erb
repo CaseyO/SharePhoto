@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="allContent"
+<% if signed_in? %>
+              <span class="headMenuItem"><%= link_to "Logout", signout_path, method: "delete" %></a></span>
+            <% end %>
+</div>
 
 <%= yield %>
 
