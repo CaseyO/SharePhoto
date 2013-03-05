@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :id, :name, :password, :username, :password_confirmation
+  attr_accessible :id, :name, :password, :username, :password_confirmation, :albums_attributes
 	has_secure_password
 
  #before_save { |user| user.username = username.downcase }
@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
 	has_many :user_pic
 	has_many :user_pref
 	has_many :user_relation
+	has_many :albums
+
+	accepts_nested_attributes_for :albums, :allow_destroy => true
 
 	validates_uniqueness_of :username
 	validates_presence_of :password, :on => :create

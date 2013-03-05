@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @user, :html => { :multipart => true} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -30,4 +30,26 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <%= f.fields_for :albums do |album_fields| %>
+    <% unless album_fields.object.new_record? %>
+      <p> 
+        Album: 
+        <%=album_fields.text_field :album_name %> 
+        <%=album_fields.text_field :album_description %><br />
+        <%= link_to 'Edit '+album_fields.object.album_name, edit_album_path(album_fields.object.id) %></td>
+
+      </p>
+    <%end%>
+  <% end %>
+
+  <%= f.fields_for :albums do |album_fields| %>
+    <% if album_fields.object.new_record? %>
+      <p>
+          Name: <%= album_fields.text_field :album_name %> <br />
+          Description: <%= album_fields.text_field :album_description %>
+      </p>
+    <%end%>
+  <% end %>
+
 <% end %>
