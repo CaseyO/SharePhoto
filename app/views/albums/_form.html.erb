@@ -1,0 +1,50 @@
+<%= form_for @album, :html => {:multipart => true} do |f| %>
+  <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+
+      <ul>
+      <% @album.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :album_name %><br />
+    <%= f.text_field :album_name %>
+  </div>
+  <div class="field">
+    <%= f.label :album_description %><br />
+    <%= f.text_field :album_description %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+
+
+  <%= f.fields_for :assets do |asset_fields| %>
+    <% if asset_fields.object.new_record? %>
+      <p>
+          <%= asset_fields.file_field :asset %>
+      </p>
+    <% end %>
+  <% end %>
+
+  <%= f.fields_for :assets do |asset_fields| %>
+    <% unless asset_fields.object.new_record? %>
+      <p>
+        <%= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
+        <%= asset_fields.check_box :_destroy %> Delete image
+      </p>
+      <% end %>
+  <%end %>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

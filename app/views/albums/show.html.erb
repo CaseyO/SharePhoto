@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Album name:</b>
+  <%= @album.album_name %>
+</p>
+
+<p>
+  <b>Album description:</b>
+  <%= @album.album_description %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @album.user_id %>
+</p>
+
+<!-- <p>
+	<%= @album.assets do |picture| %>
+		<%= link_to image_tag(picture.object.asset.url(:thumb)), picture_fields.object.asset.url(:original) %>
+	<%end%>
+</p>
+ -->
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>

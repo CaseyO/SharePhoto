@@ -1,6 +1,23 @@
 SharePhoto::Application.routes.draw do
  
  
+  resources :albums
+
+
+  get "album/index"
+
+  get "album/show"
+
+  get "album/new"
+
+  get "album/edit"
+
+  get "album/create"
+
+  get "album/update"
+
+  get "album/destroy"
+
   get "main/index"
 
   resources :user_relations
