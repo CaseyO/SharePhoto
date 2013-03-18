@@ -26,7 +26,7 @@ group :development do
 	gem 'taps'
 	gem 'sqlite3'
 	gem 'eventmachine', '~> 1.0.0'
-	#gem 'thin', '~> 1.5.0'	
+	
 end
 
 
@@ -34,7 +34,7 @@ group :production do
 	gem 'pg'
 end
 
-
+gem 'thin', '~> 1.5.0'
 gem 'jquery-rails'
 gem "paperclip", "~> 3.0"
 
