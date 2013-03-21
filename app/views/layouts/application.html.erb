@@ -7,16 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="allContent"
-<% if signed_in? %>
-              <span class="headMenuItem"><%= link_to "Logout", signout_path, method: "delete" %></a></span>
-            <% end %>
-</div>
+	<div class="allContent">
+		<% if signed_in? %>
+		    <span class="headMenuItem"><%= link_to "Logout", signout_path, method: "delete" %></span>
+		<% end %>
+	</div>
 
-<%= yield %>
+	<%= yield %>
 
-
-<div class="footer">&copy; <%= (DateTime.now).to_date.year %> Casey Ochs</div>
-    </div>
+	<div class="footer">&copy; <%= (DateTime.now).to_date.year %> Casey Ochs</div>
 </body>
 </html>
