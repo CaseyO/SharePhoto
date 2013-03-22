@@ -15,11 +15,11 @@
   <%= @album.user_id %>
 </p>
 
-<!-- <p>
-	<%= @album.assets do |picture| %>
-		<%= link_to image_tag(picture.object.asset.url(:thumb)), picture_fields.object.asset.url(:original) %>
+ <p>
+	<% @album.assets.each do |picture| %>
+		<%= link_to image_tag(picture.asset.url(:medium)), picture.asset.url(:original) %> &nbsp;
 	<%end%>
 </p>
- -->
+
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>
