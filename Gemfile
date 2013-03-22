@@ -22,11 +22,10 @@ group :assets do
 end
 
 group :development do 
-	gem 'execjs', '~> 1.4.0'
-	gem 'taps'
+	
 	gem 'sqlite3'
-	gem 'eventmachine', '~> 1.0.0'
-	gem 'thin', '~> 1.5.0'	
+	
+	
 end
 
 
@@ -34,6 +33,10 @@ group :production do
 	gem 'pg'
 end
 
+gem 'execjs', '~> 1.4.0'
+gem 'taps'
+gem 'eventmachine', '~> 1.0.0'
+gem 'thin', '~> 1.5.0'
 
 gem 'jquery-rails'
 gem "paperclip", "~> 3.0"

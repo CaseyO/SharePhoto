@@ -2,20 +2,12 @@
 
 <table>
   <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Password</th>
     <th>Username</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.id %></td>
-    <td><%= user.name %></td>
-    <td><%= user.password %></td>
     <td><%= user.username %></td>
     <% user.albums.each do |album| %>
       <% for asset in album.assets %>
@@ -31,9 +23,8 @@
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
 
-<%= link_to 'upload photo', new_user_path %>
+<%= link_to 'upload photo'%>
 
 
 (:thumb)
