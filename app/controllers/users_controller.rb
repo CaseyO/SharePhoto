@@ -64,7 +64,7 @@ class UsersController < ApplicationController
       sign_in @user
       #TheMail.welcome(@user).deliver
       flash[:success] = "Welcome to SharePhoto"
-      redirect_to '/main/index'
+      redirect_to '/albums'
     else
       render 'new'
     end

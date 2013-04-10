@@ -25,17 +25,17 @@ test:
  # timeout: 5000
 
 
-#production:
- # adapter: postgresql
- # host: localhost
- # username: user
- # database: app-dev
-
- production:
+production:
   adapter: postgresql
-  encoding: utf8
-  database: project_production
-  pool: 5
-  username:
-  password:
+  host: localhost
+  username: user
+  database: db/production.postgresql
+
+ #production:
+ # adapter: postgresql
+#  encoding: utf8
+#  database: project_production
+#  pool: 5
+#  username:
+#  password:
 
