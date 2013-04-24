@@ -30,7 +30,7 @@ end
 
 
 group :production do
-	gem 'pg'
+#	gem 'pg'
 end
 
 gem 'execjs', '~> 1.4.0'
